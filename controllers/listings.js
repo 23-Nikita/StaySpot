@@ -4,9 +4,31 @@ const mapToken= process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 
-module.exports.index = async(req,res)=>{
-   const allListings = await Listing.find({});
-   res.render("listings/index.ejs",{allListings} );
+module.exports.index = async (req, res) => {
+    let { search, category } = req.query; 
+    console.log("User searched for:", search); // Isse terminal mein check karein
+
+    let allListings;
+    if (search && search.trim() !== "") {
+        // Agar user ne "Dubai" search kiya
+        allListings = await Listing.find({
+            $or: [
+                { location: { $regex: search, $options: "i" } },
+                { country: { $regex: search, $options: "i" } },
+                { title: { $regex: search, $options: "i" } }
+            ]
+        });
+    }
+    else if (category) {
+        // Step 3: Category Logic (Ab icons par click karne se ye chalega)
+        allListings = await Listing.find({ category: category });
+    }
+     else {
+        // Normal load par saari listings
+        allListings = await Listing.find({});
+    }
+
+    res.render("listings/index.ejs", { allListings });
 };
 
 
@@ -67,7 +89,7 @@ module.exports.renderEditForm = async(req,res)=>{
 module.exports.updateListing = async(req,res)=>{   
     let { id } = req.params;    
     let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing});
-    if(typeof req.file !== "umdefined"){
+    if(typeof req.file !== "undefined"){
    let url =  req.file.path ;
    let filename = req.file.filename; 
    listing.image = {url,filename};
