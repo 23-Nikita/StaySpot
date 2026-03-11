@@ -1,50 +1,46 @@
 # 🏠 StaySpot - Full-Stack Airbnb Clone
 
-**StaySpot** ek full-stack web application hai jo Airbnb se inspired hai. Is project ka main goal users ko ek smooth platform dena hai jahan wo stays explore kar sakein, bookings dekh sakein aur apni properties list kar sakein.
-
-
+**StaySpot** is a full-stack web application inspired by Airbnb. The primary goal of this project is to provide users with a seamless platform to explore stays, manage bookings, and list their own properties.
 
 ---
 
 ## 📖 About StaySpot
-StaySpot sirf ek clone nahi, balki ek complete property management system hai. Isme humne dhyaan rakha hai ki:
-* **User-Friendly UI:** Mobile aur Desktop dono par seamless experience mile.
-* **Search Accuracy:** Location, Country ya Title ke basis par accurate results milte hain.
-* **Security:** User authentication aur authorization ko Passport.js se handle kiya gaya hai.
+StaySpot is more than just a clone; it is a complete property management system. We have focused on:
+* **User-Friendly UI:** Ensuring a seamless experience across both mobile and desktop devices.
+* **Search Accuracy:** Providing accurate results based on Location, Country, or Title.
+* **Security:** Secure user authentication and authorization handled via Passport.js.
 
 ---
 
 ## 🚀 Current Status & Features
-Abhi project initial setup phase se aage badh chuka hai aur niche diye gaye features live hain:
+The project has moved past the initial setup phase and currently features the following:
 
-* **MERN Stack Integration:** MongoDB, Express, React (planned/EJS used), aur Node.js ka solid base.
-* **Listing Model:** Har property ke liye title, description, price, location, aur category define ki gayi hai.
-* **Database Seeding:** `init/data.js` ka use karke sample data initialize kiya gaya hai.
-* **Category Filters:** Trending, Rooms, Iconic Cities, aur Mountains jaise multiple filters active hain.
-* **Mapbox Integration:** Map par listings ki exact location dekhne ki functionality.
+* **MERN Stack Integration:** Built on a solid foundation of MongoDB, Express, and Node.js (with EJS for dynamic rendering).
+* **Listing Model:** Every property includes a title, description, price, location, and defined category.
+* **Database Seeding:** Initialized with sample data using the `init/data.js` script.
+* **Category Filters:** Active filters like Trending, Rooms, Iconic Cities, and Mountains.
+* **Mapbox Integration:** Real-time map functionality to view exact listing locations.
 
 ---
 
 ## 🛠️ Tech Stack
 * **Backend:** Node.js, Express.js
-* **Frontend:** EJS, Bootstrap 5, FontAwesome (for Icons)
+* **Frontend:** EJS (Embedded JavaScript), Bootstrap 5, FontAwesome (Icons)
 * **Database:** MongoDB Atlas
-* **Storage:** Cloudinary (for Image uploads)
+* **Storage:** Cloudinary (for Image Uploads)
 * **Maps:** Mapbox SDK
 
 ---
 
 ## 📂 Folder Highlights
 * `models/listing.js`: Schema definitions.
-* `init/index.js`: Database initialize karne ka main script.
-* `views/listings/`: Saare frontend templates (index, show, new, edit).
-
-
+* `init/index.js`: Main script to initialize the database.
+* `views/listings/`: All frontend templates (index, show, new, edit).
 
 ---
 
 ## 🔧 How to Run
-1. Repo clone karein.
-2. `npm install` chalayein.
-3. `.env` file mein apni credentials daalein.
-4. `nodemon app.js` se server start karein.
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Add your credentials in a `.env` file.
+4. Start the server using `nodemon app.js`.
