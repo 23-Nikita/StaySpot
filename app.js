@@ -79,9 +79,9 @@ Passport.use(new LocalStrategy(User.authenticate()));
 Passport.serializeUser(User.serializeUser());
 Passport.deserializeUser(User.deserializeUser());
 
-// app.get("/" , (req,res)=>{
-//     res.send("it is root  ");
-// });
+app.get("/" , (req,res)=>{
+    res.redirect("/listings");
+});
 
 
 
