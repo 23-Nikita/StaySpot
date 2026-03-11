@@ -6,11 +6,11 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async (req, res) => {
     let { search, category } = req.query; 
-    console.log("User searched for:", search); // Isse terminal mein check karein
+    console.log("User searched for:", search); 
 
     let allListings;
     if (search && search.trim() !== "") {
-        // Agar user ne "Dubai" search kiya
+        
         allListings = await Listing.find({
             $or: [
                 { location: { $regex: search, $options: "i" } },
@@ -20,11 +20,11 @@ module.exports.index = async (req, res) => {
         });
     }
     else if (category) {
-        // Step 3: Category Logic (Ab icons par click karne se ye chalega)
+        
         allListings = await Listing.find({ category: category });
     }
      else {
-        // Normal load par saari listings
+    
         allListings = await Listing.find({});
     }
 
